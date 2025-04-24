@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In / Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background: linear-gradient(to bottom right, #1a1a1a, #333);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom right, #e0e0e0, #0056b3); 
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      overflow: hidden;
+    }
+
+    .form {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      background: #d9d9d9;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .sidebar-title {
+  font-family: 'arial', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #1e90ff; /* Dodger Blue */
+}
+
+    .sidebar button {
+      margin: 5px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(0, 86, 179, 0.5);
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background: #aaa;
+      color: #fff;
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 40px;
+      flex: 2;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section.active {
+      display: flex;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .section input {
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 30px;
+      background: #e0e0e0;
+      width: 100%;
+    }
+
+    .form-btn {
+      padding: 10px;
+      background: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .form-btn:hover {
+      background: linear-gradient(to right, #666, #333);
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .toggle-link a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form">
+
+      <div class="sidebar">
+        <h3 class="sidebar-title">Welcome to G5 Cafe</h3>
+        <button onclick="showForm('signin')">SIGN IN</button>
+        <button onclick="showForm('signup')">SIGN UP</button>
+      </div>
+
+      <div id="signInForm" class="section active">
+        <h2>Sign In</h2>
+        <input type="text" placeholder="Email or Username" required/>
+        <input type="password" placeholder="Password" required/>
+        <button class="form-btn" onclick="alert('You are signed in')">Sign In</button>
+        <div class="toggle-link">
+          <p>Don't have an account? <a href="#" onclick="showForm('signup')">Sign Up</a></p>
+        </div>
+      </div>
+
+      <div id="signUpForm" class="section hidden">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="First Name" required/>
+        <input type="text" placeholder="Last Name" required/>
+        <input type="email" placeholder="Email" required/>
+        <input type="password" placeholder="Password" required/>
+        <input type="password" placeholder="Confirm Password" required/>
+        <button class="form-btn" onclick="alert('Signed Up successfully')">Sign Up</button>
+        <div class="toggle-link">
+          <p>Already have an account? <a href="#" onclick="showForm('signin')">Sign In</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function showForm(type) {
+      const signIn = document.getElementById('signInForm');
+      const signUp = document.getElementById('signUpForm');
+
+      if (type === 'signin') {
+        signIn.classList.add('active');
+        signUp.classList.remove('active');
+      } else {
+        signIn.classList.remove('active');
+        signUp.classList.add('active');
+      }
+    }
+
+    window.onload = () => {
+      showForm('signin');
+    };
+  </script>
+
+</body>
+</html>
