@@ -18,12 +18,11 @@ html ,body{
   overflow-x: hidden;
 }
 
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 5px 10%;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative;
@@ -149,7 +148,7 @@ nav ul li {
   display: flex;
   justify-content: space-between;
   z-index: 2;
-  padding: 0 20px;
+  padding: 0 150px;
   transform: translateY(-50%);
 }
 
@@ -209,7 +208,6 @@ footer{
   justify-content: space-between;
   margin-bottom: 10px;
 }
-
 .subscribe {
   flex: 1 1 100%;
   display: flex;
@@ -218,8 +216,9 @@ footer{
   background-color: #111;
   padding: 15px;
   border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
 .subscribe input[type="email"] {
   padding: 10px;
   border: none;
@@ -227,7 +226,8 @@ footer{
   color: #777;
   border-radius: 5px;
   margin-right: 10px;
-  border-bottom: 1px solid #555
+  border-bottom: 1px solid #555;
+  min-width: 200px;
 }
 .subscribe-left{
   display: flex;
@@ -246,14 +246,13 @@ footer{
   width: 40px;
   height: 40px;
 }
-
 .subscribe-right {
   display: flex;
   align-items: center;
   gap: 10px;
   flex: 1 1 0%;
+  min-width: 150px;
 }
-
 .subscribe-right input {
   flex-grow: 1;
   padding: 10px 10px;
@@ -264,11 +263,9 @@ footer{
   outline: none;
   font-size: 14px;
 }
-
 .subscribe-right input::placeholder {
   color: #aaa;
 }
-
 .subscribe-right button {
   background: none;
   border: none;
@@ -277,9 +274,26 @@ footer{
   cursor: pointer;
   transition: color 0.3s;
 }
-
 .subscribe-right button:hover {
   color: #fa314a;
+}
+@media (max-width: 480px) {
+  .subscribe {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  nav ul li{
+    padding-left: 10%;
+  }
+  .subscribe input[type="email"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .subscribe-right {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 
@@ -348,7 +362,6 @@ footer{
   padding-top: 20px;
 }
 
-
 nav ul li a{
   color: #000;
   text-decoration: none;
@@ -365,7 +378,6 @@ nav ul li a::after{
 nav ul li a:hover::after{
   width: 100%;
 }
-
 
 .about-section {
   display: flex;
@@ -486,7 +498,7 @@ nav ul li a:hover::after{
 .vertical-text {
   position: absolute;
   right: -30px;
-  top: 50%;
+  top: 60%;
   transform: rotate(90deg);
   font-size: 48px;
   color: #f0f0f0;
@@ -494,10 +506,15 @@ nav ul li a:hover::after{
   pointer-events: none;
   user-select: none;
 }
+
 .services-section {
   padding: 50px;
   background-color: #000;
   text-align: center;
+}
+
+.services-header {
+  margin-bottom: 40px;
 }
 
 .services-header {
@@ -568,6 +585,59 @@ nav ul li a:hover::after{
   font-size: 14px;
   color: #555;
 }
+
+.contact-form-section {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-section h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-section label {
+  font-weight: 600;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.contact-form-section button[type="submit"] {
+  background-color: #00bfffed;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-section button[type="submit"]:hover {
+  background-color: #0099cc;
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
 .jobrow{
   margin-top: 10px;
   display: flex;
@@ -575,37 +645,61 @@ nav ul li a:hover::after{
 }
 .testimonials {
   width: 80%;
-  margin: auto;
+  margin: 40px auto;
   text-align: center;
   padding-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
 }
-.column img{
-  height: 40px;
-  margin-left: 5px;
-  margin-right: 30px;
-  border-radius: 50%;
-
+.testimonials h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
-.column{
+.jobrow {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.column {
   flex-basis: 45%;
-  background: #00010209;
+  background: #f9f9f9;
   border-radius: 10px;
   margin-bottom: 5%;
   display: flex;
   padding: 25px;
-  gap: 5px;
-  cursor: pointer;
+  gap: 15px;
+  cursor: default;
   box-sizing: border-box;
-  transition: 0.5s;
+  transition: box-shadow 0.3s ease;
   text-align: left;
+  align-items: center;
 }
-.column h3{
-  text-align: center;
+.column img {
+  height: 60px;
+  width: 60px;
+  margin-left: 0;
+  margin-right: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.column h3 {
+  text-align: left;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
+  font-size: 1.1rem;
+  color: #007bff;
 }
-.column:hover{
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+.column p {
+  font-style: italic;
+  color: #555;
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+.column:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
   nav ul {
@@ -645,6 +739,7 @@ nav ul li a:hover::after{
 
   .menu-toggle {
     display: flex;
+
   }
 
   .call {
@@ -1039,3 +1134,63 @@ color: #1e90ff; /* Dodger Blue */
 }
 
 
+/* about us section */
+.sub-header{
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img/lovely-friends-looking-laptop-indoors.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sub-header1{
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img/location.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about{
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;  
+  padding-bottom: 50px;
+}
+
+.about-col{
+  flex-basis: 50%;
+  padding: 30px 2px;
+}
+.about-col img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.about-col h1{
+  padding-top: 0;
+}
+.about-col p{
+  padding: 15px 0 25px;
+}
+
+
+/* THIS IS A CONTACT US SECTION */
+.location{
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
+.location iframe{
+  width: 100%;;
+}

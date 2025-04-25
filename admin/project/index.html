@@ -14,9 +14,11 @@
 </head>
 <body>
   <header>
-    <div class="logo">G5 CAFE<span class="lot" style="color: red; font-size: 54px; border-radius: 50%;">.</span></div>
 
-    <nav>
+  
+    <div class="logo">G5 CAFE<span class="lot" style="color: red; font-size: 54px; border-radius: 50%;">.</span></div>
+    <nav style="display: flex; justify-content: space-evenly;">
+      
       <div class="menu-toggle" id="menu-toggle">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -24,7 +26,7 @@
       </div>
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login2.html">Sigin</a></li>
@@ -39,40 +41,67 @@
 
   <section class="slider">
     <!-- Slide 1 -->
-    <div class="slide active" style="background-image: url('img/herosection.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="slide active" style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('img/herosection.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
       <div class="overlay"></div>
       <div class="content">
         <p class="tagline">WELCOME TO G5 INTERTNET CAFE</p>
         <h1>Leading computer and internet agency.</h1>
         <div class="buttons">
-          <button class="btn1 explore">Explore now</button>
-          <button class="btn1 contact">Contact now</button>
+          <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+            <button class="btn" style="color: #fff; background-color:  #00bfffed;">
+              Explore Now
+            </button>
+            </div>
+            <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+              <a href="contact.html">            
+                <button class="btn" style="color: #00bfffed; border: 1px solid #00bfffed;">
+                Contact now
+              </button></a>
+            </div>
         </div>
       </div>
     </div>
 
     <!-- Slide 2 -->
-    <div class="slide" style="background-image: url('img/room.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="slide" style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url('img/room.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
       <div class="overlay"></div>
       <div class="content">
         <p class="tagline">MODERN COMPUTER LABS</p>
         <h1>Empowering minds with cutting-edge technology</h1>
         <div class="buttons">
-          <button class="btn1 explore">Explore now</button>
-          <button class="btn1 contact">Book us now</button>
+          <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+            <button class="btn" style="color: #fff; background-color:  #00bfffed;">
+              Explore Now
+            </button>
+            </div>
+            <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+            <button class="btn" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              <i class="fas fa-plus-circle me-1"></i> Book Now
+            </button>
+            </div>
+
         </div>
       </div>
     </div>
 
     <!-- Slide 3 - We Are Hiring -->
-    <div class="slide" style="background-image: url('img/hiring.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="slide" style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url('img/hiring.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
       <div class="overlay"></div>
       <div class="content">
         <p class="tagline">JOIN OUR TEAM</p>
         <h1>We Are Hiring Talented People!</h1>
         <div class="buttons">
-          <button class="btn1 explore">See Open Roles</button>
-          <button class="btn1 contact">Apply Now</button>
+          <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+            <button class="btn" style="color: #fff; background-color:  #00bfffed;">
+              Explore Now
+            </button>
+            </div>
+            <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+            <button class="btn" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              Apply Now
+            </button>
+            </div>
+
         </div>
       </div>
     </div>
@@ -92,7 +121,7 @@
       <div class="row align-items-center">
         <div class="col-md-6 position-relative">
           <img src="img/about.png" alt="Team working" class="img-fluid rounded shadow">
-          <div class="experience-box position-absolute bg-primary text-white rounded px-3 py-2" style="top: 20px; left: 20px; font-weight: 600; font-size: 1.2rem;">
+          <div class="experience-box position-absolute text-white rounded px-3 py-2" style="top: 20px; left: 20px; font-weight: 600; font-size: 1.2rem;">
             Since <span class="fs-3">2015</span>
           </div>
         </div>
@@ -100,27 +129,16 @@
           <p class="text-muted fst-italic">// About G5 Internet Cafe</p>
           <h2 class="mb-4 fw-bold">Internet Café Experts</h2>
           <p class="mb-4">G5 Internet Cafe was founded in 2015 as a community center for fast internet and a cozy place to work. It provides up-to-date amenities, friendly personnel, and refreshments to guarantee a successful and pleasurable digital experience. All ages and backgrounds are welcome in the welcoming community of G5, which guarantees a relaxing and joyful online experience.</p>
-          <div class="row g-4 mb-4">
-            <div class="col-6 d-flex align-items-start">
-              <img src="img/camera.jpg" alt="Camera Installation" width="50" height="50" class="me-3">
-              <div>
-                <h5 class="mb-1">Camera Installation</h5>
-                <p class="mb-0 text-secondary">Professional and reliable camera installation services to ensure your safety.</p>
-              </div>
-            </div>
-            <div class="col-6 d-flex align-items-start">
-              <img src="img/cafe.png" alt="Best Internet Speeds" width="50" height="50" class="me-3">
-              <div>
-                <h5 class="mb-1">Best Internet Speeds</h5>
-                <p class="mb-0 text-secondary">Experience lightning-fast internet speeds for all your browsing and streaming needs.</p>
-              </div>
-            </div>
-          </div>
-          <a href="#" class="btn btn-primary btn-lg">Explore Now</a>
+          <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+           <a href="about.html">
+            <button class="btn" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              Learn More
+          </button>
+           </a>
         </div>
       </div>
     </div>
-    <div class="vertical-text">CAFE</div>
+    <div class="vertical-text">G5 CAFE</div>
   </section>
 
 
@@ -136,6 +154,11 @@
         </div>
         <h3>High Internet Speeds</h3>
         <p>Tincidunt elit magnisi nulla facilisis sagittis maecenas amet ultrices.</p>
+        <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+          <button class="btn" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              Learn More
+          </button>
+      </div>
       </div>
       <div class="service-box active">
         <div class="service-icon">
@@ -155,6 +178,11 @@
         </div>
         <h3>Computer Lessons</h3>
         <p>Tincidunt elit magnisi nulla facilisis sagittis maecenas amet ultrices.</p>
+        <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+          <button class="btn"  onclick="openPopup()" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              Learn More
+          </button>
+      </div>
       </div>
       <div class="service-box">
         <div class="service-icon">
@@ -162,6 +190,11 @@
         </div>
         <h3>Camera Installation</h3>
         <p>Tincidunt elit magnisi nulla facilisis sagittis maecenas amet ultrices.</p>
+        <div class="text-end mb-0 " style="display: flex; justify-content: center; align-items: center;">
+          <button class="btn"  onclick="openPopup()" style="color: #00bfffed; border: 1px solid #00bfffed;">
+              Learn More
+          </button>
+      </div>
       </div>
     </div>
   </section>
@@ -387,7 +420,7 @@
       <div class="footer-row">
         <div class="subscribe">
           <div class="subscribe-left">
-            <i class="fa-thin fa-envelope"></i>
+            <img src="img/email.png" alt="">
             <strong><p>Subscribe now to get<br>latest updates</p></strong>
           </div>
           <div class="subscribe-right">
